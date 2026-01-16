@@ -1,10 +1,10 @@
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 
 const services = [
-  { name: "AI Voice Agents", href: "#services" },
-  { name: "Voice2Form", href: "#services" },
-  { name: "AI Chatbots", href: "#services" },
-  { name: "Ringless Voicemail", href: "#services" },
+  { name: "Custom AI Software", href: "#services" },
+  { name: "Systems Integration", href: "#services" },
+  { name: "AI Consulting", href: "#services" },
+  { name: "ML Solutions", href: "#services" },
 ];
 
 const company = [
@@ -30,9 +30,9 @@ export default function Footer() {
               <span className="text-xl font-medium">BotMakers</span>
             </a>
             <p className="text-sm font-light leading-relaxed max-w-md mb-6 text-gray-400">
-              The AI Agency: Smart Conversations, Seamless Connections.
-              AI-powered voice solutions transforming business communications
-              across every industry.
+              The AI Agency: Enterprise AI, Custom Built.
+              We build intelligent software and systems that transform
+              how businesses operate.
             </p>
             <div className="flex gap-4">
               <a

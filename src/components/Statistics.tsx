@@ -1,19 +1,19 @@
 const stats = [
   {
-    value: "30%",
-    label: "HIGHER LEAD-TO-CONVERSION",
+    value: "50+",
+    label: "ENTERPRISE PROJECTS DELIVERED",
   },
   {
-    value: "50%",
-    label: "INCREASE IN STAFF EFFICIENCY",
+    value: "40%",
+    label: "AVERAGE COST REDUCTION",
   },
   {
-    value: "10+",
-    label: "HOURS SAVED WEEKLY",
+    value: "3x",
+    label: "FASTER TIME TO MARKET",
   },
   {
-    value: "1M+",
-    label: "CALL MINUTES PROCESSED",
+    value: "99.9%",
+    label: "SYSTEM UPTIME",
   },
 ];
 
@@ -28,8 +28,8 @@ export default function Statistics() {
             <span className="font-medium">Speak</span>
           </h2>
           <p className="text-lg font-light leading-relaxed text-gray-600 max-w-2xl mx-auto">
-            Our AI solutions deliver measurable impact for businesses across
-            every industry.
+            Our custom AI solutions deliver measurable impact for enterprises
+            across every industry.
           </p>
         </div>
 

@@ -1,62 +1,62 @@
 import {
-  Phone,
-  FileText,
-  MessageSquare,
-  Voicemail,
-  Users,
-  Clock,
-  Mic,
-  HelpCircle,
+  Code,
+  Layers,
+  Lightbulb,
+  Database,
+  Cpu,
+  BarChart3,
+  Shield,
+  Zap,
 } from "lucide-react";
 
 const services = [
   {
-    icon: Phone,
-    title: "AI Voice Agents",
+    icon: Code,
+    title: "Custom AI Software",
     description:
-      "Intelligent voice agents for inbound and outbound calling that handle customer interactions naturally and efficiently.",
+      "Bespoke AI applications built from the ground up to solve your specific business challenges and drive competitive advantage.",
   },
   {
-    icon: FileText,
-    title: "Voice2Form",
+    icon: Layers,
+    title: "Systems Integration",
     description:
-      "Revolutionary technology that captures form data in real-time through voice conversations, streamlining data entry.",
+      "Seamlessly integrate AI capabilities into your existing enterprise systems, ERP, CRM, and legacy infrastructure.",
   },
   {
-    icon: MessageSquare,
-    title: "AI Chatbots",
+    icon: Lightbulb,
+    title: "AI Strategy & Consulting",
     description:
-      "Smart chatbots that engage website visitors, qualify leads, and provide instant support around the clock.",
+      "Expert guidance to help you identify AI opportunities, plan adoption roadmaps, and maximize ROI on your AI investments.",
   },
   {
-    icon: Voicemail,
-    title: "Ringless Voicemail",
+    icon: Database,
+    title: "Data Engineering",
     description:
-      "Non-intrusive voicemail campaigns that reach customers directly without disrupting their day.",
+      "Build robust data pipelines and infrastructure that power your AI systems with clean, reliable, and scalable data.",
   },
   {
-    icon: Users,
-    title: "Lead Qualification",
+    icon: Cpu,
+    title: "Machine Learning Solutions",
     description:
-      "Automated lead scoring and qualification that identifies your most promising prospects instantly.",
+      "Custom ML models for prediction, classification, and optimization tailored to your industry and use cases.",
   },
   {
-    icon: Clock,
-    title: "24/7 Support Hotlines",
+    icon: BarChart3,
+    title: "AI Analytics & Insights",
     description:
-      "Always-on customer support that never sleeps, ensuring your customers get help whenever they need it.",
+      "Transform raw data into actionable intelligence with AI-powered dashboards, reporting, and decision support systems.",
   },
   {
-    icon: Mic,
-    title: "AI Podcasting",
+    icon: Shield,
+    title: "Enterprise Security AI",
     description:
-      "AI-powered podcast creation and production tools that help you create engaging audio content.",
+      "AI-driven security solutions for threat detection, fraud prevention, and compliance monitoring.",
   },
   {
-    icon: HelpCircle,
-    title: "Interactive Voice Help",
+    icon: Zap,
+    title: "Process Automation",
     description:
-      "Voice-activated help systems that guide users through processes and answer questions naturally.",
+      "Intelligent automation that streamlines workflows, reduces manual tasks, and accelerates business operations.",
   },
 ];
 
@@ -73,8 +73,9 @@ export default function Services() {
               <span className="font-medium">Services</span>
             </h2>
             <p className="text-lg font-light leading-relaxed text-gray-600">
-              Comprehensive AI-powered solutions tailored to transform your
-              business communications and operations.
+              End-to-end AI solutions for enterprises. From strategy to
+              deployment, we build intelligent systems that transform your
+              business.
             </p>
           </div>
 

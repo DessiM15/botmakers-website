@@ -16,17 +16,18 @@ export default function Hero() {
 
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-7xl font-light tracking-tight leading-none text-[#033457]">
-                  Smart
+                  Enterprise
                   <br />
-                  <span className="font-medium">Conversations</span>
+                  <span className="font-medium">AI</span>
                   <br />
-                  <span className="text-gray-400">Seamless Connections</span>
+                  <span className="text-gray-400">Custom Built</span>
                 </h1>
 
                 <p className="text-lg lg:text-xl font-light leading-relaxed max-w-lg text-gray-600">
-                  AI-powered voice solutions that enable your business to save
-                  time and money through automated customer interactions, lead
-                  qualification, and operational streamlining.
+                  We build custom AI-powered software and systems that transform
+                  how enterprises operate. From intelligent automation to
+                  predictive analytics, we deliver solutions tailored to your
+                  business.
                 </p>
               </div>
 
@@ -35,7 +36,7 @@ export default function Hero() {
                   href="#contact"
                   className="px-8 py-4 text-sm font-medium transition-colors flex items-center justify-center gap-2 bg-[#033457] hover:bg-[#022a45] text-white"
                 >
-                  <span>Book a Demo</span>
+                  <span>Start a Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
@@ -55,22 +56,22 @@ export default function Hero() {
               <div className="col-span-2 row-span-2 group cursor-pointer">
                 <div className="relative h-80 lg:h-96 overflow-hidden bg-[#033457]">
                   <img
-                    src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1200&auto=format&fit=crop&q=80"
-                    alt="AI Voice Technology"
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop&q=80"
+                    alt="Custom Software Development"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
                   />
                   <div className="absolute inset-0 group-hover:bg-[#033457]/10 transition-colors duration-300 bg-[#033457]/30"></div>
                   <div className="absolute top-6 left-6">
                     <span className="px-3 py-1 text-xs font-medium bg-[#03FF00] text-[#033457]">
-                      AI VOICE AGENTS
+                      CUSTOM AI SOLUTIONS
                     </span>
                   </div>
                   <div className="absolute bottom-6 left-6 text-white">
                     <div className="text-2xl font-light mb-1">
-                      24/7 Availability
+                      Built for Enterprise
                     </div>
                     <div className="text-sm opacity-90">
-                      Never miss a customer call
+                      Scalable, secure, and intelligent
                     </div>
                   </div>
                 </div>
@@ -86,8 +87,8 @@ export default function Hero() {
                   />
                   <div className="absolute inset-0 group-hover:bg-[#033457]/20 transition-colors duration-300 bg-[#033457]/40"></div>
                   <div className="absolute bottom-3 left-3 text-white">
-                    <div className="text-sm font-light">Voice2Form</div>
-                    <div className="text-xs opacity-90">Real-time data capture</div>
+                    <div className="text-sm font-light">AI Consulting</div>
+                    <div className="text-xs opacity-90">Strategic guidance</div>
                   </div>
                 </div>
               </div>
@@ -95,14 +96,14 @@ export default function Hero() {
               <div className="group cursor-pointer">
                 <div className="relative h-32 lg:h-40 overflow-hidden bg-[#033457]">
                   <img
-                    src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&auto=format&fit=crop&q=80"
-                    alt="AI Chatbot Interface"
+                    src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&auto=format&fit=crop&q=80"
+                    alt="Data Infrastructure"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
                   />
                   <div className="absolute inset-0 group-hover:bg-[#033457]/20 transition-colors duration-300 bg-[#033457]/40"></div>
                   <div className="absolute bottom-3 left-3 text-white">
-                    <div className="text-sm font-light">AI Chatbots</div>
-                    <div className="text-xs opacity-90">Intelligent responses</div>
+                    <div className="text-sm font-light">Systems Integration</div>
+                    <div className="text-xs opacity-90">Seamless connectivity</div>
                   </div>
                 </div>
               </div>
@@ -116,8 +117,8 @@ export default function Hero() {
                   />
                   <div className="absolute inset-0 group-hover:bg-[#033457]/20 transition-colors duration-300 bg-[#033457]/40"></div>
                   <div className="absolute bottom-3 left-3 text-white">
-                    <div className="text-sm font-light">Lead Qualification</div>
-                    <div className="text-xs opacity-90">Smart automation</div>
+                    <div className="text-sm font-light">AI Analytics</div>
+                    <div className="text-xs opacity-90">Actionable insights</div>
                   </div>
                 </div>
               </div>
@@ -125,14 +126,14 @@ export default function Hero() {
               <div className="group cursor-pointer">
                 <div className="relative h-32 lg:h-40 overflow-hidden bg-[#033457]">
                   <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
-                    alt="Business Growth"
+                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80"
+                    alt="Cloud Infrastructure"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
                   />
                   <div className="absolute inset-0 group-hover:bg-[#033457]/20 transition-colors duration-300 bg-[#033457]/40"></div>
                   <div className="absolute bottom-3 left-3 text-white">
-                    <div className="text-sm font-light">Ringless Voicemail</div>
-                    <div className="text-xs opacity-90">Non-intrusive outreach</div>
+                    <div className="text-sm font-light">ML Infrastructure</div>
+                    <div className="text-xs opacity-90">Production-ready AI</div>
                   </div>
                 </div>
               </div>
