@@ -4,19 +4,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-[#1a1a2e] text-white">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        {/* Calendar Embed - Full Width with time slots on right */}
-        <div className="mb-16">
-          <iframe
-            src="https://cal.com/botmakers/30min?embed=true&theme=dark"
-            width="100%"
-            height="700"
-            title="Book a meeting with BotMakers"
-            className="border-0 rounded-lg"
-            style={{ minHeight: "700px", colorScheme: "dark" }}
-          />
-        </div>
-
-        {/* Text Section - Below Calendar */}
+        {/* Text Section - Above Calendar */}
         <div className="mb-12">
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight mb-2">
             Start Your
@@ -30,8 +18,8 @@ export default function Contact() {
             streamline your operations.
           </p>
 
-          {/* Contact Info - Stacked */}
-          <div className="space-y-4">
+          {/* Contact Info - Horizontal Row */}
+          <div className="flex flex-wrap gap-8">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 border flex items-center justify-center border-gray-600 rounded">
                 <Phone className="w-5 h-5" />
@@ -74,6 +62,18 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Calendar Embed - Full Width */}
+        <div>
+          <iframe
+            src="https://cal.com/botmakers/30min?embed=true&theme=dark"
+            width="100%"
+            height="700"
+            title="Book a meeting with BotMakers"
+            className="border-0 rounded-lg"
+            style={{ minHeight: "700px", colorScheme: "dark" }}
+          />
         </div>
       </div>
     </section>
