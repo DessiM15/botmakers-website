@@ -67,12 +67,12 @@ export default function Contact() {
         {/* Calendar Embed - Full Width */}
         <div>
           <iframe
-            src="https://cal.com/botmakers/30min?embed=true&theme=dark&hideEventTypeDetails=false"
+            src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"
             width="100%"
-            height="600"
+            height="700"
             title="Book a meeting with BotMakers"
-            className="border-0"
-            style={{ minHeight: "600px", colorScheme: "dark", background: "transparent" }}
+            className="border-0 rounded-lg"
+            style={{ minHeight: "700px", colorScheme: "dark" }}
           />
         </div>
       </div>
