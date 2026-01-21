@@ -14,8 +14,8 @@ export default function Contact() {
             </h2>
 
             <p className="text-lg font-light leading-relaxed max-w-lg text-gray-300">
-              Ready to transform your business communications? Connect with our
-              team of AI specialists to discover how BotMakers can streamline
+              Ready to transform your business with custom AI solutions? Connect with our
+              team of specialists to discover how Botmakers can streamline
               your operations.
             </p>
 
@@ -27,10 +27,10 @@ export default function Contact() {
                 <div>
                   <div className="text-sm text-gray-400">Call Us</div>
                   <a
-                    href="tel:1-866-752-8002"
+                    href="tel:866-753-8002"
                     className="font-light hover:text-[#03FF00] transition-colors"
                   >
-                    1-866-752-8002
+                    866-753-8002
                   </a>
                 </div>
               </div>
@@ -42,10 +42,10 @@ export default function Contact() {
                 <div>
                   <div className="text-sm text-gray-400">Email Us</div>
                   <a
-                    href="mailto:aicallers@botmakers.ai"
+                    href="mailto:info@botmakers.ai"
                     className="font-light hover:text-[#03FF00] transition-colors"
                   >
-                    aicallers@botmakers.ai
+                    info@botmakers.ai
                   </a>
                 </div>
               </div>
@@ -72,10 +72,10 @@ export default function Contact() {
               <iframe
                 src="https://cal.com/botmakers/30min?embed=true&layout=month_view"
                 width="100%"
-                height="550"
+                height="700"
                 title="Book a meeting with BotMakers"
                 className="border-0"
-                style={{ minHeight: "550px" }}
+                style={{ minHeight: "700px" }}
               />
             </div>
             <div className="text-center text-sm text-gray-400 mt-4">

@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import Statistics from "@/components/Statistics";
 import Contact from "@/components/Contact";
@@ -11,7 +10,6 @@ export default function Home() {
     <main>
       <Navigation />
       <Hero />
-      <Services />
       <Industries />
       <Statistics />
       <Contact />

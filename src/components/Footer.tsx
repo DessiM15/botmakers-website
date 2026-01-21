@@ -1,12 +1,5 @@
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 
-const services = [
-  { name: "Custom AI Software", href: "#services" },
-  { name: "Systems Integration", href: "#services" },
-  { name: "AI Consulting", href: "#services" },
-  { name: "ML Solutions", href: "#services" },
-];
-
 const company = [
   { name: "About", href: "#about" },
   { name: "Industries", href: "#industries" },
@@ -18,19 +11,18 @@ export default function Footer() {
   return (
     <footer className="py-16 bg-gray-900 text-white">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-6">
+            <a href="/" className="inline-block mb-6">
               <img
-                src="/assets/b light.png"
-                alt="BotMakers"
-                className="h-10 w-auto"
+                src="/assets/botmakers-full-logo.png"
+                alt="Botmakers.ai"
+                className="h-8 w-auto brightness-0 invert"
               />
-              <span className="text-xl font-medium">BotMakers</span>
             </a>
             <p className="text-sm font-light leading-relaxed max-w-md mb-6 text-gray-400">
-              The AI Agency: Enterprise AI, Custom Built.
+              Enterprise AI, Custom Built.
               We build intelligent software and systems that transform
               how businesses operate.
             </p>
@@ -56,22 +48,6 @@ export default function Footer() {
               >
                 <Instagram className="w-5 h-5" />
               </a>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
-            <div className="space-y-3 text-sm font-light text-gray-400">
-              {services.map((service, index) => (
-                <a
-                  key={index}
-                  href={service.href}
-                  className="block transition-colors hover:text-[#03FF00]"
-                >
-                  {service.name}
-                </a>
-              ))}
             </div>
           </div>
 

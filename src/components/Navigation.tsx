@@ -11,25 +11,16 @@ export default function Navigation() {
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          <a href="/">
             <img
-              src="/assets/b dark.png"
-              alt="BotMakers"
-              className="h-10 w-auto"
+              src="/assets/botmakers-full-logo.png"
+              alt="Botmakers.ai"
+              className="h-8 w-auto"
             />
-            <span className="text-xl font-medium tracking-tight text-[#033457]">
-              BotMakers
-            </span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-12">
-            <a
-              href="#services"
-              className="text-sm font-normal transition-colors text-gray-700 hover:text-[#033457]"
-            >
-              Services
-            </a>
             <a
               href="#industries"
               className="text-sm font-normal transition-colors text-gray-700 hover:text-[#033457]"
@@ -78,13 +69,6 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="lg:hidden py-6 border-t border-gray-100">
             <div className="flex flex-col gap-4">
-              <a
-                href="#services"
-                className="text-sm font-normal py-2 text-gray-700 hover:text-[#033457]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </a>
               <a
                 href="#industries"
                 className="text-sm font-normal py-2 text-gray-700 hover:text-[#033457]"
