@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-gray-900 text-white">
+    <section id="contact" className="py-24 text-white" style={{ backgroundColor: "#1a1a2e" }}>
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         {/* Text Section - Above Calendar */}
         <div className="mb-12">
