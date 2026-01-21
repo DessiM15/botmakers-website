@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-[#1a1a2e] text-white">
+    <section id="contact" className="py-24 bg-gray-900 text-white">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         {/* Text Section - Above Calendar */}
         <div className="mb-12">
@@ -67,7 +67,7 @@ export default function Contact() {
         {/* Calendar Embed - Full Width */}
         <div>
           <iframe
-            src="https://cal.com/botmakers/30min?embed=true&theme=dark"
+            src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"
             width="100%"
             height="700"
             title="Book a meeting with BotMakers"
