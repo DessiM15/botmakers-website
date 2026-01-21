@@ -69,10 +69,10 @@ export default function Contact() {
           <iframe
             src="https://cal.com/botmakers/30min?embed=true&theme=dark"
             width="100%"
-            height="750"
+            height="850"
             title="Book a meeting with BotMakers"
             className="border-0 rounded-lg"
-            style={{ minHeight: "750px", colorScheme: "dark" }}
+            style={{ minHeight: "850px", colorScheme: "dark" }}
           />
         </div>
       </div>
