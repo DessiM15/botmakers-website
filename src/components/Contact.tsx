@@ -67,7 +67,7 @@ export default function Contact() {
         {/* Calendar Embed - Full Width */}
         <div>
           <iframe
-            src="https://cal.com/botmakers/30min?embed=true&theme=dark"
+            src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"
             width="100%"
             height="850"
             title="Book a meeting with BotMakers"
