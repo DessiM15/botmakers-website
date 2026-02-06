@@ -11,6 +11,7 @@ import {
   Scale,
   Church,
   TrendingUp,
+  ArrowRight,
 } from "lucide-react";
 
 const industries = [
@@ -78,15 +79,17 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-24 bg-[#033457]">
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+    <section id="industries" className="py-28 bg-[#F8F6F7]">
+      <div className="max-w-[1500px] mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6 text-white">
-            Industries We{" "}
-            <span className="font-medium">Serve</span>
+        <div className="text-center mb-16" data-aos="fade-up">
+          <span className="section-tagline bg-[#033457]/10 text-[#033457]">
+            Our Expertise
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-[#033457] mt-4 mb-6">
+            Industries We Serve
           </h2>
-          <p className="text-lg font-light leading-relaxed text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg font-light leading-relaxed text-gray-500 max-w-2xl mx-auto">
             From Fortune 500 companies to local nonprofits, our AI solutions
             adapt to the unique needs of every sector.
           </p>
@@ -97,19 +100,29 @@ export default function Industries() {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group p-6 bg-white/5 border border-white/10 hover:border-[#03FF00]/30 hover:bg-white/10 transition-all cursor-pointer"
+              data-aos="fade-up"
+              data-aos-delay={((index % 4) * 100).toString()}
+              className="group p-6 lg:p-8 bg-white border border-gray-100 hover:border-[#03FF00]/50 hover:shadow-xl transition-all duration-300 cursor-pointer rounded-lg"
             >
-              <div className="w-10 h-10 rounded-sm flex items-center justify-center mb-4 bg-white/10 group-hover:bg-[#03FF00] transition-colors">
-                <industry.icon className="w-5 h-5 text-white group-hover:text-[#033457] transition-colors" />
+              <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 bg-[#033457]/5 group-hover:bg-[#03FF00] transition-all duration-300">
+                <industry.icon className="w-6 h-6 text-[#033457] group-hover:text-[#033457] transition-colors" />
               </div>
-              <h3 className="text-sm font-medium mb-2 text-white">
+              <h3 className="text-base font-semibold mb-2 text-[#033457]">
                 {industry.title}
               </h3>
-              <p className="text-xs font-light leading-relaxed text-gray-400">
+              <p className="text-sm font-light leading-relaxed text-gray-500">
                 {industry.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12" data-aos="fade-up">
+          <a href="#contact" className="btn-default btn-navy inline-flex">
+            <span>Start Your Project</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
