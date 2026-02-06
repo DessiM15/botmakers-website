@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     "We build custom AI-powered software and systems that transform how enterprises operate. From intelligent automation to predictive analytics, we deliver solutions tailored to your business.",
   keywords:
     "enterprise AI, custom software, AI development, systems integration, AI consulting, BotMakers",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
