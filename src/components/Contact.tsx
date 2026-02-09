@@ -1,10 +1,11 @@
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import LeadForm from "./LeadForm";
 
 export default function Contact() {
   return (
     <section id="contact" className="py-28 bg-gray-900 text-white">
       <div className="max-w-[1500px] mx-auto px-4 lg:px-8">
-        {/* Header */}
+        {/* Row 1: Header + Contact Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div data-aos="fade-right">
             <span className="section-tagline bg-[#03FF00] text-[#033457]">
@@ -67,7 +68,12 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Calendar Embed - Full Width */}
+        {/* Row 2: Lead Capture Form */}
+        <div className="mb-16">
+          <LeadForm />
+        </div>
+
+        {/* Row 3: Calendar Embed */}
         <div data-aos="fade-up">
           <iframe
             src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"
