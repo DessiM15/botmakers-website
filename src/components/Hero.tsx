@@ -79,7 +79,7 @@ export default function Hero() {
                     : "opacity-0 translate-y-4"
                 }`}
               >
-                <a href="#contact" className="btn-default btn-highlighted">
+                <a href="#project-form" className="btn-default btn-highlighted">
                   <span>Start a Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>

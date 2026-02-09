@@ -1,5 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
-import LeadForm from "./LeadForm";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -65,15 +64,21 @@ export default function Contact() {
                 </span>
               </div>
             </div>
+
+            {/* Tell Us About Your Project Button */}
+            <a
+              href="#project-form"
+              className="btn-default btn-highlighted mt-4 w-fit"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <span>Tell Us About Your Project</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
-        {/* Row 2: Lead Capture Form */}
-        <div className="mb-16">
-          <LeadForm />
-        </div>
-
-        {/* Row 3: Calendar Embed */}
+        {/* Calendar Embed */}
         <div data-aos="fade-up">
           <iframe
             src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"

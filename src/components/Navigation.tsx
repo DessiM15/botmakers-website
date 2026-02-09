@@ -30,7 +30,7 @@ export default function Navigation() {
             <img
               src="/assets/botmakers-full-logo.png"
               alt="Botmakers.ai"
-              className={`h-8 w-auto transition-all duration-300 ${
+              className={`h-12 w-auto transition-all duration-300 ${
                 !isScrolled ? "brightness-0 invert" : ""
               }`}
             />

@@ -59,7 +59,7 @@ export default function Footer() {
               <img
                 src="/assets/botmakers-full-logo.png"
                 alt="Botmakers.ai"
-                className="h-8 w-auto brightness-0 invert"
+                className="h-12 w-auto brightness-0 invert"
               />
             </a>
             <p className="text-base font-light leading-relaxed max-w-md mb-6 text-white/50">
