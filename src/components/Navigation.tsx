@@ -28,11 +28,9 @@ export default function Navigation() {
           {/* Logo */}
           <a href="/" className="relative z-10">
             <img
-              src="/assets/botmakers-full-logo.png"
+              src={isScrolled ? "/assets/botmakers-full-logo.png" : "/assets/botmakers-white-green-logo.png"}
               alt="Botmakers.ai"
-              className={`h-12 w-auto transition-all duration-300 ${
-                !isScrolled ? "brightness-0 invert" : ""
-              }`}
+              className="h-12 w-auto transition-all duration-300"
             />
           </a>
 

@@ -57,9 +57,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="/" className="inline-block mb-6">
               <img
-                src="/assets/botmakers-full-logo.png"
+                src="/assets/botmakers-white-green-logo.png"
                 alt="Botmakers.ai"
-                className="h-12 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </a>
             <p className="text-base font-light leading-relaxed max-w-md mb-6 text-white/50">
