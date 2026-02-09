@@ -29,15 +29,9 @@ const SYSTEM_PROMPT = `You are a project analyst for Botmakers.ai, an enterprise
    - Recommended Path: 3-5 phases of how Botmakers would approach the project
    - What Happens Next: Clear explanation of the review and follow-up process
 
-KEY COMPANY FACTS:
-- Botmakers delivers MVPs within 1 week (typically 3 days, but communicate as "within one week")
-- The recommended project path should reflect this rapid delivery capability
-- Phase 1 / MVP should always emphasize speed: "MVP delivered within one week"
-- Full production builds follow after MVP validation
-
 IMPORTANT GUARDRAILS:
-- Never promise specific pricing or guarantees
-- Communicate MVP delivery as "within one week" — this is a key differentiator
+- Never promise specific pricing, hard timelines, or guarantees
+- Only suggest ranges and recommendations
 - Be professional, confident, and warm — matching the Botmakers brand voice
 - Keep the prospect output high-level; detailed breakdowns come after internal team review
 
@@ -119,7 +113,7 @@ function getMockAnalysis(data: LeadFormData): AIAnalysisResult {
         reasoning:
           "Based on the project type and description, this appears to be a standard enterprise engagement requiring discovery and scoping.",
       },
-      estimatedEffort: "MVP within 1 week, full build 4-8 weeks",
+      estimatedEffort: "4-8 weeks",
       keyQuestions: [
         "What are the primary KPIs you want to improve with this solution?",
         "What does your current tech stack look like?",
@@ -132,9 +126,9 @@ function getMockAnalysis(data: LeadFormData): AIAnalysisResult {
     prospect: {
       projectUnderstanding: `We understand you're looking for ${data.projectType.toLowerCase()} solutions to help transform your business operations. Based on your description, this aligns well with the enterprise AI solutions we build at Botmakers.`,
       recommendedPath: [
-        { phase: "Discovery Call", description: "A focused call to understand your business needs, existing systems, and success criteria." },
-        { phase: "MVP Delivery (Within 1 Week)", description: "We rapidly build and deliver a working MVP so you can see your solution in action and validate the approach." },
-        { phase: "Iteration & Full Build", description: "Based on MVP feedback, we expand into the full production solution with all integrations and features." },
+        { phase: "Discovery & Assessment", description: "We'll schedule a call to understand your business needs, existing systems, and success criteria in detail." },
+        { phase: "Solution Architecture", description: "Our team will design a tailored solution blueprint addressing your specific requirements and technical constraints." },
+        { phase: "Development & Integration", description: "We build and integrate the solution with your existing workflows, with regular check-ins and progress updates." },
         { phase: "Testing & Deployment", description: "Rigorous QA testing followed by a phased deployment to ensure zero disruption to your operations." },
         { phase: "Ongoing Support", description: "Post-launch monitoring, optimization, and support to ensure long-term success." },
       ],
