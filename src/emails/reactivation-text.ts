@@ -27,6 +27,8 @@ I'd also love your perspective — what tools, services, or solutions would be m
 
 Know someone who could benefit from AI-powered solutions? Share a referral here: ${referralLink}
 
+Or simply reply to this email with their name and email, and we'll take it from there.
+
 If now isn't the right time, no worries — just reply and let me know. I'd love to stay in touch either way.
 
 Best,

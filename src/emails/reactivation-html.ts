@@ -52,11 +52,14 @@ export function getReactivationEmailHTML(
         <p style="margin: 0 0 12px; color: #033457; font-weight: 600;">Know someone who could benefit?</p>
         <p style="margin: 0 0 12px; color: #333; font-size: 14px; line-height: 1.5;">
           If you know any colleagues or businesses that could use AI-powered solutions,
-          we&rsquo;d love an introduction. It takes just a minute:
+          we&rsquo;d love an introduction. You can fill out a quick referral form:
         </p>
         <a href="${referralLink}" style="display: inline-block; background: #033457; color: #ffffff; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">
           Share a Referral &rarr;
         </a>
+        <p style="margin: 12px 0 0; color: #666; font-size: 13px; line-height: 1.5;">
+          Or simply <strong>reply to this email</strong> with their name and email, and we&rsquo;ll take it from there.
+        </p>
       </div>
 
       <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 24px 0 0;">
