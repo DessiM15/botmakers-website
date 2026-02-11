@@ -44,7 +44,7 @@ export default function Hero() {
 
               {/* Main Heading */}
               <h1
-                className={`text-5xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] text-white transition-all duration-700 delay-200 ${
+                className={`text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] text-white transition-all duration-700 delay-200 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
