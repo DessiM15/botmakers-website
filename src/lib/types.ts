@@ -71,3 +71,38 @@ export const INTERNAL_TEAM = {
   trent: "tdaniel@botmakers.ai",
   dee: "dessiah@m.botmakers.ai",
 } as const;
+
+// ============================================
+// Referral System Types
+// ============================================
+
+export interface ReferralSlot {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+}
+
+export interface ReferralFormData {
+  referrerName: string;
+  referrerEmail: string;
+  referrerCompany: string;
+  industryFeedback: string;
+  referrals: ReferralSlot[];
+}
+
+export interface ReferralSubmission extends ReferralFormData {
+  id: string;
+  referralCount: number;
+  submittedAt: string;
+  ip: string;
+}
+
+export const EMPTY_REFERRAL_SLOT: ReferralSlot = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+};
+
+export const MAX_REFERRAL_SLOTS = 5;

@@ -165,6 +165,18 @@ export default function LeadForm() {
         <p className="text-[#03FF00] font-medium">
           Want to fast-track? Book a call below.
         </p>
+        <div className="mt-8 pt-6 border-t border-white/10">
+          <p className="text-white/40 text-sm mb-3">
+            Know someone who could use AI solutions?
+          </p>
+          <a
+            href="/refer"
+            className="btn-default border border-white/30 text-white hover:border-[#03FF00] hover:text-[#03FF00] inline-flex"
+          >
+            <span>Refer a Contact</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     );
   }

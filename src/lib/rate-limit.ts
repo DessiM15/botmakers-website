@@ -37,3 +37,38 @@ export async function checkRateLimit(
   const result = await limiter.limit(ip);
   return { success: result.success, remaining: result.remaining };
 }
+
+// --- Referral rate limiting (5 per IP per hour) ---
+
+let referralRatelimit: Ratelimit | null = null;
+
+function getReferralRateLimiter(): Ratelimit | null {
+  if (referralRatelimit) return referralRatelimit;
+
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (!url || !token) {
+    console.warn("[Rate Limit] Upstash not configured — referral rate limiting disabled");
+    return null;
+  }
+
+  referralRatelimit = new Ratelimit({
+    redis: Redis.fromEnv(),
+    limiter: Ratelimit.slidingWindow(5, "1 h"),
+    analytics: true,
+    prefix: "botmakers:referral",
+  });
+
+  return referralRatelimit;
+}
+
+export async function checkReferralRateLimit(
+  ip: string
+): Promise<{ success: boolean; remaining: number }> {
+  const limiter = getReferralRateLimiter();
+  if (!limiter) return { success: true, remaining: 999 };
+
+  const result = await limiter.limit(ip);
+  return { success: result.success, remaining: result.remaining };
+}

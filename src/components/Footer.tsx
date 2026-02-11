@@ -4,6 +4,7 @@ const company = [
   { name: "About", href: "#about" },
   { name: "Industries", href: "#industries" },
   { name: "Contact", href: "#contact" },
+  { name: "Refer a Contact", href: "/refer" },
   { name: "Client Portal", href: "https://clients.botmakers.ai" },
 ];
 

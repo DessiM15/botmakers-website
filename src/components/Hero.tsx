@@ -50,11 +50,12 @@ export default function Hero() {
                     : "opacity-0 translate-y-4"
                 }`}
               >
-                Enterprise
+                Custom Full-Stack
                 <br />
-                <span className="text-[#03FF00]">AI,</span> Custom
+                Software,{" "}
+                <span className="text-[#03FF00]">AI</span>
                 <br />
-                Built
+                Powered
               </h1>
 
               {/* Description */}
