@@ -20,7 +20,7 @@ export function getReactivationEmailHTML(
 <body style="margin: 0; padding: 0; background: #f5f5f5;">
   <div style="font-family: 'Inter Tight', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
     <div style="background: #033457; padding: 32px; text-align: center;">
-      <img src="${SITE_URL}/assets/botmakers-full-logo.png" alt="Botmakers.ai" style="height: 32px; filter: brightness(0) invert(1);" />
+      <img src="${SITE_URL}/assets/botmakers-white-green-logo.png" alt="Botmakers.ai" style="height: 32px;" />
     </div>
     <div style="padding: 32px;">
       <p style="color: #333; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Hi ${firstName},</p>

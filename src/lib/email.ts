@@ -120,7 +120,7 @@ export async function sendProspectSummaryEmail(
   const html = `
     <div style="font-family: 'Inter Tight', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff;">
       <div style="background: #033457; padding: 32px; text-align: center;">
-        <img src="https://botmakers.ai/assets/botmakers-full-logo.png" alt="Botmakers.ai" style="height: 32px; filter: brightness(0) invert(1);" />
+        <img src="https://botmakers.ai/assets/botmakers-white-green-logo.png" alt="Botmakers.ai" style="height: 32px;" />
       </div>
 
       <div style="padding: 32px;">
