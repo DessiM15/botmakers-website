@@ -128,6 +128,9 @@ export default function Footer() {
               <a href="#" className="transition-colors hover:text-white/60">
                 Terms of Service
               </a>
+              <a href="/admin/login" className="transition-colors hover:text-white/60">
+                Team Login
+              </a>
             </div>
           </div>
         </div>

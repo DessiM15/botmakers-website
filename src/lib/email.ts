@@ -17,6 +17,11 @@ function getResendClient(): Resend | null {
 const FROM_INFO = process.env.RESEND_FROM_ADDRESS || "info@botmakers.ai";
 const FROM_LEADS = process.env.RESEND_LEADS_FROM_ADDRESS || "leads@botmakers.ai";
 
+function getSiteUrl(): string {
+  if (process.env.NODE_ENV === "development") return "http://localhost:3000";
+  return process.env.NEXT_PUBLIC_SITE_URL || "https://botmakers.ai";
+}
+
 export async function sendInternalReviewEmail(
   lead: LeadRecord,
   analysis: AIInternalAnalysis,
@@ -25,7 +30,7 @@ export async function sendInternalReviewEmail(
   const resend = getResendClient();
   const to = Object.values(INTERNAL_TEAM);
   const subject = `[New Lead] ${lead.companyName || lead.fullName} — ${lead.projectType} (${analysis.leadScore})`;
-  const approveUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://botmakers.ai"}/api/leads/${lead.id}/approve?token=${approveToken}`;
+  const approveUrl = `${getSiteUrl()}/api/leads/${lead.id}/approve?token=${approveToken}`;
 
   const html = `
     <div style="font-family: 'Inter Tight', Arial, sans-serif; max-width: 700px; margin: 0 auto; background: #ffffff;">

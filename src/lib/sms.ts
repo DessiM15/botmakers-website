@@ -1,7 +1,4 @@
-// Twilio SMS service — placeholder until credentials are provided.
-// Once TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_PHONE_NUMBER are set,
-// SMS messages will send. Until then, they log to console.
-
+import twilio from "twilio";
 import type { LeadRecord } from "./types";
 
 function getTwilioClient() {
@@ -13,9 +10,6 @@ function getTwilioClient() {
     return null;
   }
 
-  // Dynamic import to avoid errors when twilio isn't configured
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const twilio = require("twilio");
   return twilio(sid, token);
 }
 
@@ -37,12 +31,16 @@ export async function sendConfirmationSMS(lead: LeadRecord) {
   const from = process.env.TWILIO_PHONE_NUMBER;
 
   if (client && from) {
-    await client.messages.create({
-      body: message,
-      from,
-      to: lead.phone,
-    });
-    console.log("[SMS] Confirmation sent to:", lead.phone);
+    try {
+      const msg = await client.messages.create({
+        body: message,
+        from,
+        to: lead.phone,
+      });
+      console.log("[SMS] Confirmation sent to:", lead.phone, "SID:", msg.sid);
+    } catch (err) {
+      console.error("[SMS] Failed to send to:", lead.phone, err);
+    }
   } else {
     console.log("[SMS Preview]");
     console.log("To:", lead.phone);

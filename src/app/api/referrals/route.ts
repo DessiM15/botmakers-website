@@ -5,10 +5,8 @@ import {
   sendReferralTeamNotificationEmail,
   sendReferrerThankYouEmail,
 } from "@/lib/referral-email";
+import { supabaseAdmin } from "@/lib/supabase-server";
 import type { ReferralSubmission } from "@/lib/types";
-
-// In-memory store (will be replaced by Supabase)
-const referralSubmissions: ReferralSubmission[] = [];
 
 export async function POST(request: NextRequest) {
   try {
@@ -107,8 +105,36 @@ export async function POST(request: NextRequest) {
       ip,
     };
 
-    // Store in memory (replaced by Supabase later)
-    referralSubmissions.push(submission);
+    // Store in Supabase
+    if (supabaseAdmin) {
+      const { data: referrer, error: refError } = await supabaseAdmin
+        .from("referrers")
+        .insert({
+          full_name: submission.referrerName,
+          email: submission.referrerEmail,
+          company: submission.referrerCompany || null,
+          feedback: submission.industryFeedback || null,
+          ip_address: ip,
+        })
+        .select("id")
+        .single();
+
+      if (!refError && referrer) {
+        const referralRows = submission.referrals.map((r) => ({
+          referrer_id: referrer.id,
+          name: r.name,
+          email: r.email,
+          phone: r.phone,
+          company: r.company || null,
+          status: "pending",
+        }));
+        await supabaseAdmin.from("referrals").insert(referralRows);
+        submission.id = referrer.id;
+      } else {
+        console.error("[Referral Store] Error:", refError);
+      }
+    }
+
     console.log(
       "[Referral Stored]",
       submission.id,
