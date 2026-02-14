@@ -9,6 +9,7 @@ import {
   Users,
   Share2,
   FolderKanban,
+  Mail,
   LogOut,
   ExternalLink,
   Menu,
@@ -63,6 +64,7 @@ export default function AdminSidebar() {
       icon: FolderKanban,
       badge: metrics.activeProjects,
     },
+    { name: "Email Generator", href: "/admin/email-preview", icon: Mail },
   ];
 
   const isActive = (href: string) => {
