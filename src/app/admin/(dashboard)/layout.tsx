@@ -9,7 +9,7 @@ export default function AdminDashboardLayout({
     <div className="min-h-screen bg-gray-950">
       <AdminSidebar />
       <main className="lg:ml-64 min-h-screen">
-        <div className="p-6 lg:p-8">{children}</div>
+        <div className="p-6 pt-16 lg:p-8">{children}</div>
       </main>
     </div>
   );

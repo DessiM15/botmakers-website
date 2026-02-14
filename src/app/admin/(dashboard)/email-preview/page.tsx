@@ -227,7 +227,7 @@ export default function EmailPreviewPage() {
   const labelClass = "block text-sm font-medium text-white/70 mb-1.5";
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-8">
+    <div className="text-white">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">Reactivation Email Generator</h1>
         <p className="text-white/50 mb-8">
