@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 
 const CAL_LINK = "https://cal.com/botmakers/30min";
-const SITE_URL = "https://botmakers.ai";
+const SITE_URL = "https://www.botmakers.ai";
 
 const DEFAULT_BODY = `It's been a little while since we connected, and I wanted to check in.
 
