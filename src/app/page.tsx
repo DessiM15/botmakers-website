@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import LeadFormSection from "@/components/LeadFormSection";
+import TrustedBy from "@/components/TrustedBy";
 import Industries from "@/components/Industries";
 import Statistics from "@/components/Statistics";
 import Contact from "@/components/Contact";
@@ -13,6 +14,7 @@ export default function Home() {
       <AOSInit />
       <Navigation />
       <Hero />
+      <TrustedBy />
       <LeadFormSection />
       <Industries />
       <Statistics />
