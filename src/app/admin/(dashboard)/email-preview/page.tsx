@@ -78,9 +78,9 @@ function buildHTML(fields: EmailFields): string {
       <!-- Email container -->
       <table width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff;max-width:600px;width:100%;">
 
-        <!-- Header with text logo (works in all email clients) -->
-        <tr><td bgcolor="#033457" style="background-color:#033457;padding:28px 32px;text-align:center;font-family:Arial,sans-serif;">
-          <span style="color:#ffffff;font-size:22px;font-weight:bold;letter-spacing:1px;">BOTMAKERS</span><span style="color:#03FF00;font-size:22px;font-weight:bold;">.</span><span style="color:#ffffff;font-size:22px;font-weight:bold;">AI</span>
+        <!-- Header with logo -->
+        <tr><td bgcolor="#033457" style="background-color:#033457;padding:28px 32px;text-align:center;">
+          <img src="https://www.botmakers.ai/assets/botmakers-white-green-logo.png" alt="Botmakers.ai" width="200" height="40" style="display:inline-block;outline:none;border:none;text-decoration:none;" />
         </td></tr>
 
         <!-- Body -->
