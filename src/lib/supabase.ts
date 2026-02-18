@@ -31,10 +31,8 @@ export async function insertLead(
     sms_consent: data.smsConsent,
     sms_consent_timestamp: data.smsConsent ? new Date().toISOString() : null,
     sms_consent_ip: data.smsConsentIp,
-    lead_score: "Medium",
-    status: "pending",
+    score: "medium",
     source: "web_form",
-    ip_address: data.smsConsentIp,
   };
 
   if (client) {
@@ -78,12 +76,11 @@ export async function updateLead(
   if (client) {
     // Map camelCase fields to snake_case for DB
     const dbUpdates: Record<string, unknown> = {};
-    if (updates.leadScore !== undefined) dbUpdates.lead_score = updates.leadScore;
+    if (updates.leadScore !== undefined) dbUpdates.score = updates.leadScore.toLowerCase();
     if (updates.aiInternalAnalysis !== undefined)
       dbUpdates.ai_internal_analysis = updates.aiInternalAnalysis;
     if (updates.aiProspectSummary !== undefined)
       dbUpdates.ai_prospect_summary = updates.aiProspectSummary;
-    if (updates.status !== undefined) dbUpdates.status = updates.status;
     if (updates.smsOptedOut !== undefined) dbUpdates.sms_opted_out = updates.smsOptedOut;
 
     const { data: row, error } = await client
@@ -137,10 +134,10 @@ function mapRowToLeadRecord(row: Record<string, unknown>): LeadRecord {
     smsConsent: (row.sms_consent as boolean) || false,
     smsConsentTimestamp: (row.sms_consent_timestamp as string) || undefined,
     smsConsentIp: (row.sms_consent_ip as string) || undefined,
-    leadScore: (row.lead_score as "High" | "Medium" | "Low") || "Medium",
+    leadScore: ((row.score as string) || "medium").replace(/^\w/, (c: string) => c.toUpperCase()) as "High" | "Medium" | "Low",
     aiInternalAnalysis: (row.ai_internal_analysis as LeadRecord["aiInternalAnalysis"]) || null,
     aiProspectSummary: (row.ai_prospect_summary as string) || null,
-    status: (row.status as LeadRecord["status"]) || "pending",
+    status: (row.pipeline_stage === "new_lead" ? "pending" : "processed") as LeadRecord["status"],
     smsOptedOut: (row.sms_opted_out as boolean) || false,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
