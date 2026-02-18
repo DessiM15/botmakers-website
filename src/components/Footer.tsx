@@ -128,7 +128,7 @@ export default function Footer() {
               <a href="#" className="transition-colors hover:text-white/60">
                 Terms of Service
               </a>
-              <a href="/admin/login" className="transition-colors hover:text-white/60">
+              <a href="https://botmakers-crm.vercel.app/sign-in" className="transition-colors hover:text-white/60">
                 Team Login
               </a>
             </div>
