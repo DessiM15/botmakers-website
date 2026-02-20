@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#033457]/90" />
 
-      <div className="relative z-10 max-w-[1500px] mx-auto px-4 lg:px-8 w-full py-32 lg:py-0">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-4 lg:px-8 w-full py-32 lg:pt-28 lg:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="lg:col-span-7">
