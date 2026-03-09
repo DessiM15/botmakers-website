@@ -85,10 +85,11 @@ export default function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="#industries"
+                  href="#contact"
                   className="btn-default border border-white/30 text-white hover:border-[#03FF00] hover:text-[#03FF00]"
                 >
-                  <span>View Industries</span>
+                  <span>Book a Call</span>
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>

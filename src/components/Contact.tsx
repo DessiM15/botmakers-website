@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import BookingWidget from "@/components/booking/BookingWidget";
 
 export default function Contact() {
   return (
@@ -78,16 +79,9 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Calendar Embed */}
+        {/* Booking Widget */}
         <div data-aos="fade-up">
-          <iframe
-            src="https://cal.com/botmakers/30min?embed=true&theme=dark&layout=month_view"
-            width="100%"
-            height="850"
-            title="Book a meeting with BotMakers"
-            className="border-0 rounded-lg"
-            style={{ minHeight: "850px", colorScheme: "dark" }}
-          />
+          <BookingWidget />
         </div>
       </div>
     </section>
