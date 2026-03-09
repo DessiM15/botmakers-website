@@ -1,5 +1,4 @@
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
-import BookingWidget from "@/components/booking/BookingWidget";
+import { Phone, Mail, MapPin, ArrowRight, Calendar } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -79,9 +78,37 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Booking Widget */}
+        {/* Booking — Google Calendar Appointment Scheduling */}
         <div data-aos="fade-up">
-          <BookingWidget />
+          <div className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+              Book a <span className="text-[#03FF00]">Discovery Call</span>
+            </h3>
+            <p className="text-white/60">
+              Schedule a free 30-minute call to discuss your project.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-2xl bg-white rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2AgAOe0uv-WImpEWhZK6-hs6xWBxmhh62C1ZkGPeVMr7bGqZ5Mg0CESM5Spaq-zhY887D4Sxp_?gv=true"
+                style={{ border: 0, width: "100%", height: 600 }}
+                title="Book a Discovery Call"
+              />
+              <div className="bg-gray-50 px-6 py-3 text-center">
+                <a
+                  href="https://calendar.app.google/XPMQJee7JkWaSnCe9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#033457] hover:text-[#03FF00] transition-colors"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Open in Google Calendar
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
