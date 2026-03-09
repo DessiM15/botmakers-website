@@ -7,7 +7,7 @@ import BookingCalendar from "./BookingCalendar";
 import BookingTimeSlots from "./BookingTimeSlots";
 import BookingForm from "./BookingForm";
 
-const API_BASE = process.env.NEXT_PUBLIC_BOOKING_API_URL || "";
+const API_BASE = process.env.NEXT_PUBLIC_BOOKING_API_URL || "https://botmakers-crm.vercel.app";
 
 type Step = "calendar" | "form" | "success";
 

@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { ArrowLeft, Loader2 } from "lucide-react";
 
-const API_BASE = process.env.NEXT_PUBLIC_BOOKING_API_URL || "";
+const API_BASE = process.env.NEXT_PUBLIC_BOOKING_API_URL || "https://botmakers-crm.vercel.app";
 
 interface BookingFormProps {
   selectedDate: string;
