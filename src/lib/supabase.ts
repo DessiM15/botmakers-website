@@ -44,7 +44,7 @@ export async function insertLead(
 
     if (error) {
       console.error("[Supabase] Insert lead error:", error);
-      throw new Error("Failed to store lead");
+      throw new Error(`Failed to store lead: ${error.message || error.code || JSON.stringify(error)}`);
     }
 
     return mapRowToLeadRecord(row);

@@ -99,8 +99,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true, leadId: lead.id }, { status: 200 });
   } catch (error) {
     console.error("[API /api/leads] Error:", error);
+    const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: "An unexpected error occurred. Please try again." },
+      { error: "An unexpected error occurred. Please try again.", debug: message },
       { status: 500 }
     );
   }
