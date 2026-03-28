@@ -31,7 +31,7 @@ export async function insertLead(
     sms_consent: data.smsConsent,
     sms_consent_timestamp: data.smsConsent ? new Date().toISOString() : null,
     sms_consent_ip: data.smsConsentIp,
-    score: "medium",
+    lead_score: "Medium",
     source: "web_form",
   };
 
@@ -76,7 +76,8 @@ export async function updateLead(
   if (client) {
     // Map camelCase fields to snake_case for DB
     const dbUpdates: Record<string, unknown> = {};
-    if (updates.leadScore !== undefined) dbUpdates.score = updates.leadScore.toLowerCase();
+    if (updates.leadScore !== undefined) dbUpdates.lead_score = updates.leadScore;
+    if (updates.status !== undefined) dbUpdates.status = updates.status;
     if (updates.aiInternalAnalysis !== undefined)
       dbUpdates.ai_internal_analysis = updates.aiInternalAnalysis;
     if (updates.aiProspectSummary !== undefined)
@@ -134,10 +135,10 @@ function mapRowToLeadRecord(row: Record<string, unknown>): LeadRecord {
     smsConsent: (row.sms_consent as boolean) || false,
     smsConsentTimestamp: (row.sms_consent_timestamp as string) || undefined,
     smsConsentIp: (row.sms_consent_ip as string) || undefined,
-    leadScore: ((row.score as string) || "medium").replace(/^\w/, (c: string) => c.toUpperCase()) as "High" | "Medium" | "Low",
+    leadScore: ((row.lead_score as string) || "Medium") as "High" | "Medium" | "Low",
     aiInternalAnalysis: (row.ai_internal_analysis as LeadRecord["aiInternalAnalysis"]) || null,
     aiProspectSummary: (row.ai_prospect_summary as string) || null,
-    status: (row.pipeline_stage === "new_lead" ? "pending" : "processed") as LeadRecord["status"],
+    status: (row.status as string || "pending") as LeadRecord["status"],
     smsOptedOut: (row.sms_opted_out as boolean) || false,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,

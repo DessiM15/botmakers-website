@@ -31,11 +31,16 @@ function getRateLimiter(): Ratelimit | null {
 export async function checkRateLimit(
   ip: string
 ): Promise<{ success: boolean; remaining: number }> {
-  const limiter = getRateLimiter();
-  if (!limiter) return { success: true, remaining: 999 };
+  try {
+    const limiter = getRateLimiter();
+    if (!limiter) return { success: true, remaining: 999 };
 
-  const result = await limiter.limit(ip);
-  return { success: result.success, remaining: result.remaining };
+    const result = await limiter.limit(ip);
+    return { success: result.success, remaining: result.remaining };
+  } catch (error) {
+    console.error("[Rate Limit] Error checking rate limit, allowing request:", error);
+    return { success: true, remaining: 999 };
+  }
 }
 
 // --- Referral rate limiting (5 per IP per hour) ---
@@ -66,9 +71,14 @@ function getReferralRateLimiter(): Ratelimit | null {
 export async function checkReferralRateLimit(
   ip: string
 ): Promise<{ success: boolean; remaining: number }> {
-  const limiter = getReferralRateLimiter();
-  if (!limiter) return { success: true, remaining: 999 };
+  try {
+    const limiter = getReferralRateLimiter();
+    if (!limiter) return { success: true, remaining: 999 };
 
-  const result = await limiter.limit(ip);
-  return { success: result.success, remaining: result.remaining };
+    const result = await limiter.limit(ip);
+    return { success: result.success, remaining: result.remaining };
+  } catch (error) {
+    console.error("[Rate Limit] Error checking referral rate limit, allowing request:", error);
+    return { success: true, remaining: 999 };
+  }
 }

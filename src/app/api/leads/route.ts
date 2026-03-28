@@ -66,26 +66,35 @@ export async function POST(request: NextRequest) {
     // Store lead
     const lead = await insertLead({ ...formData, smsConsentIp: ip });
 
-    // Run AI analysis
-    const analysis = await analyzeLeadWithAI(formData);
+    // Run AI analysis (non-fatal — lead is already stored)
+    let analysis;
+    try {
+      analysis = await analyzeLeadWithAI(formData);
 
-    // Update lead with AI results
-    await updateLead(lead.id, {
-      leadScore: analysis.internal.leadScore,
-      aiInternalAnalysis: analysis.internal,
-      aiProspectSummary: JSON.stringify(analysis.prospect),
-      status: "processed",
-    });
+      // Update lead with AI results
+      await updateLead(lead.id, {
+        leadScore: analysis.internal.leadScore,
+        aiInternalAnalysis: analysis.internal,
+        aiProspectSummary: JSON.stringify(analysis.prospect),
+        status: "processed",
+      });
+    } catch (aiError) {
+      console.error("[API /api/leads] AI analysis failed (lead still stored):", aiError);
+    }
 
     // Generate approve token for the detailed follow-up link
     const approveToken = generateApproveToken(lead.id);
 
-    // Send communications in parallel
-    await Promise.allSettled([
-      sendInternalReviewEmail(lead, analysis.internal, approveToken),
-      sendProspectSummaryEmail(lead, analysis.prospect),
-      sendConfirmationSMS({ ...lead, ...formData }),
-    ]);
+    // Send communications in parallel (non-fatal)
+    try {
+      await Promise.allSettled([
+        analysis ? sendInternalReviewEmail(lead, analysis.internal, approveToken) : Promise.resolve(),
+        analysis ? sendProspectSummaryEmail(lead, analysis.prospect) : Promise.resolve(),
+        sendConfirmationSMS({ ...lead, ...formData }),
+      ]);
+    } catch (emailError) {
+      console.error("[API /api/leads] Email/SMS failed:", emailError);
+    }
 
     return NextResponse.json({ success: true, leadId: lead.id }, { status: 200 });
   } catch (error) {
