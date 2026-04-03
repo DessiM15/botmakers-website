@@ -8,6 +8,17 @@ import {
 import { supabaseAdmin } from "@/lib/supabase-server";
 import type { ReferralSubmission } from "@/lib/types";
 
+function slugify(name: string): string {
+  return (
+    name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "") +
+    "-" +
+    Date.now().toString(36)
+  );
+}
+
 export async function POST(request: NextRequest) {
   try {
     const ip =
@@ -83,7 +94,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Build submission record
+    // Build submission record (used for emails)
     const submission: ReferralSubmission = {
       id: crypto.randomUUID(),
       referrerName: body.referrerName.trim(),
@@ -105,34 +116,97 @@ export async function POST(request: NextRequest) {
       ip,
     };
 
-    // Store in Supabase
-    if (supabaseAdmin) {
-      const { data: referrer, error: refError } = await supabaseAdmin
+    // ── Store in Supabase ──────────────────────────────────────
+    if (!supabaseAdmin) {
+      console.error("[Referral] supabaseAdmin not configured — DB writes skipped");
+    } else {
+      // Upsert referrer by email
+      const { data: existingReferrer } = await supabaseAdmin
         .from("referrers")
-        .insert({
-          full_name: submission.referrerName,
-          email: submission.referrerEmail,
-          company: submission.referrerCompany || null,
-          feedback: submission.industryFeedback || null,
-          ip_address: ip,
-        })
-        .select("id")
-        .single();
+        .select("id, total_referrals")
+        .eq("email", submission.referrerEmail)
+        .maybeSingle();
 
-      if (!refError && referrer) {
-        const referralRows = submission.referrals.map((r) => ({
-          referrer_id: referrer.id,
-          name: r.name,
-          email: r.email,
-          phone: r.phone,
-          company: r.company || null,
-          status: "pending",
-        }));
-        await supabaseAdmin.from("referrals").insert(referralRows);
-        submission.id = referrer.id;
+      let referrerId: string;
+
+      if (existingReferrer) {
+        // Update existing referrer
+        referrerId = existingReferrer.id;
+        await supabaseAdmin
+          .from("referrers")
+          .update({
+            full_name: submission.referrerName,
+            company: submission.referrerCompany || null,
+            feedback: submission.industryFeedback || null,
+            total_referrals: (existingReferrer.total_referrals || 0) + submission.referrals.length,
+            ip_address: ip,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", existingReferrer.id);
       } else {
-        console.error("[Referral Store] Error:", refError);
+        // Create new referrer (with required slug + total_referrals)
+        const { data: newReferrer, error: refError } = await supabaseAdmin
+          .from("referrers")
+          .insert({
+            slug: slugify(submission.referrerName),
+            full_name: submission.referrerName,
+            email: submission.referrerEmail,
+            company: submission.referrerCompany || null,
+            feedback: submission.industryFeedback || null,
+            total_referrals: submission.referrals.length,
+            ip_address: ip,
+          })
+          .select("id")
+          .single();
+
+        if (refError || !newReferrer) {
+          console.error("[Referral] Failed to create referrer:", refError);
+          return NextResponse.json(
+            { error: "Failed to save referral. Please try again." },
+            { status: 500 }
+          );
+        }
+        referrerId = newReferrer.id;
       }
+
+      submission.id = referrerId;
+
+      // Insert each referred contact as a LEAD (source="referral")
+      for (const referral of submission.referrals) {
+        const { error: leadError } = await supabaseAdmin
+          .from("leads")
+          .insert({
+            full_name: referral.name,
+            email: referral.email,
+            phone: referral.phone,
+            company_name: referral.company || null,
+            source: "referral",
+            pipeline_stage: "new_lead",
+            referred_by: referrerId,
+          });
+
+        if (leadError) {
+          console.error("[Referral] Failed to insert lead:", leadError);
+        }
+      }
+
+      // Log activity
+      supabaseAdmin
+        .from("activity_log")
+        .insert({
+          actor_type: "system",
+          action: "referral.created",
+          entity_type: "referrer",
+          entity_id: referrerId,
+          metadata: {
+            referrer_email: submission.referrerEmail,
+            referred_count: submission.referrals.length,
+            referred_emails: submission.referrals.map((r) => r.email),
+          },
+        })
+        .then(({ error }) => {
+          if (error) console.error("[Referral] Activity log failed:", error);
+        });
     }
 
     console.log(
