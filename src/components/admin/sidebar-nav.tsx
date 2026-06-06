@@ -13,6 +13,7 @@ import {
   Activity,
   Gift,
   Calendar,
+  Home,
 } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { logoutTeam } from "@/lib/actions/auth";
@@ -20,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import type { TeamUser } from "@/lib/types";
 
 const navItems = [
+  { href: "/", label: "Home", icon: Home },
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/pipeline", label: "Pipeline", icon: Kanban },
   { href: "/admin/leads", label: "Leads", icon: Users },

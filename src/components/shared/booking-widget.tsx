@@ -1,4 +1,4 @@
-// SPEC: Booking Widget > 3-Panel Orchestrator (Cal.com-style)
+// SPEC: Booking Widget > 3-Panel Orchestrator
 // DEP-MAP: Booking Widget > CLIENT > BookingWidget
 "use client";
 
