@@ -110,7 +110,7 @@ export function AmfnChatPanel() {
         <SheetContent
           side="right"
           showCloseButton={false}
-          className="w-full sm:max-w-md bg-white border-black/[0.06] p-0 flex flex-col"
+          className="w-full sm:max-w-2xl bg-white border-black/[0.06] p-0 flex flex-col"
         >
           {/* Header */}
           <SheetHeader className="px-4 pt-4 pb-3 border-b border-transparent" style={{
