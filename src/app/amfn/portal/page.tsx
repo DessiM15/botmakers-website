@@ -26,8 +26,8 @@ export default async function AmfnPortalPage() {
         {/* Title with icon */}
         <div className="amfn-fade-up space-y-2 mb-8">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#03FF00]/10 border border-[#03FF00]/20">
-              <FileText className="h-5 w-5 text-[#03FF00]" />
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#3B82F6]/10 border border-[#3B82F6]/20">
+              <FileText className="h-5 w-5 text-[#3B82F6]" />
             </div>
             <div>
               <h1 className="text-3xl font-bold text-white tracking-tight">
@@ -48,8 +48,8 @@ export default async function AmfnPortalPage() {
               key={stat.label}
               className="bg-white/[0.02] border border-white/[0.06] rounded-xl px-4 py-3 flex items-center gap-3"
             >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#03FF00]/10">
-                <stat.icon className="h-4 w-4 text-[#03FF00]" />
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#3B82F6]/10">
+                <stat.icon className="h-4 w-4 text-[#3B82F6]" />
               </div>
               <div>
                 <p className="text-xs text-gray-500">{stat.label}</p>
@@ -64,7 +64,7 @@ export default async function AmfnPortalPage() {
           <div
             className="h-px"
             style={{
-              background: "linear-gradient(90deg, transparent, rgba(3,255,0,0.15), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.15), transparent)",
             }}
           />
         </div>

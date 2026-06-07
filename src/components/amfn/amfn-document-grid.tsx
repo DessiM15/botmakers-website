@@ -24,8 +24,8 @@ export function AmfnDocumentGrid() {
         return (
           <section key={category} className="amfn-fade-up" style={{ animationDelay: `${catIndex * 100}ms` }}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-7 h-7 rounded-md bg-[#03FF00]/10 border border-[#03FF00]/20">
-                <Icon className="h-3.5 w-3.5 text-[#03FF00]" />
+              <div className="flex items-center justify-center w-7 h-7 rounded-md bg-[#3B82F6]/10 border border-[#3B82F6]/20">
+                <Icon className="h-3.5 w-3.5 text-[#3B82F6]" />
               </div>
               <h2 className="text-lg font-semibold text-white">{category}</h2>
               <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] text-[10px] text-gray-400 font-medium">

@@ -130,9 +130,12 @@
   --amfn-bg: #0a0e1a;
   --amfn-bg-card: rgba(255, 255, 255, 0.02);
   --amfn-bg-card-hover: rgba(255, 255, 255, 0.05);
-  --amfn-neon: #03FF00;
-  --amfn-neon-dim: rgba(3, 255, 0, 0.15);
-  --amfn-neon-glow: rgba(3, 255, 0, 0.4);
+  --amfn-red: #EF4444;
+  --amfn-red-dim: rgba(239, 68, 68, 0.15);
+  --amfn-red-glow: rgba(239, 68, 68, 0.4);
+  --amfn-blue: #3B82F6;
+  --amfn-blue-dim: rgba(59, 130, 246, 0.15);
+  --amfn-blue-glow: rgba(59, 130, 246, 0.4);
   --amfn-border: rgba(255, 255, 255, 0.06);
   --amfn-border-hover: rgba(255, 255, 255, 0.12);
   --amfn-navy: #033457;
@@ -156,8 +159,8 @@
 }
 
 @keyframes amfn-glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(3, 255, 0, 0.15); }
-  50%      { box-shadow: 0 0 40px rgba(3, 255, 0, 0.35); }
+  0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); }
+  50%      { box-shadow: 0 0 40px rgba(239, 68, 68, 0.35); }
 }
 
 @keyframes amfn-scan-line {
@@ -227,7 +230,7 @@
   right: 0;
   top: -2px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--amfn-neon), transparent);
+  background: linear-gradient(90deg, transparent, var(--amfn-red), transparent);
   opacity: 0;
   pointer-events: none;
 }
@@ -250,9 +253,9 @@
   background: linear-gradient(
     270deg,
     transparent,
-    var(--amfn-neon-dim),
-    var(--amfn-neon-glow),
-    var(--amfn-neon-dim),
+    var(--amfn-blue-dim),
+    var(--amfn-blue-glow),
+    var(--amfn-blue-dim),
     transparent
   );
   background-size: 300% 100%;
@@ -271,9 +274,8 @@
   animation: amfn-border-trace 3s linear infinite;
 }
 
-/* Button shine sweep */
+/* Button shine sweep — no position:relative here to avoid overriding fixed/absolute on parent */
 .amfn-btn-shine {
-  position: relative;
   overflow: hidden;
 }
 
@@ -307,8 +309,8 @@
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(3, 255, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(3, 255, 0, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: amfn-grid-scroll 8s linear infinite;
   pointer-events: none;

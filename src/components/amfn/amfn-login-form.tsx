@@ -52,9 +52,9 @@ export function AmfnLoginForm() {
             id="username"
             value="AMFN"
             readOnly
-            className="bg-white/[0.03] border-white/[0.06] text-[#03FF00] font-mono cursor-not-allowed pl-10"
+            className="bg-white/[0.03] border-white/[0.06] text-[#3B82F6] font-mono cursor-not-allowed pl-10"
           />
-          <Shield className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#03FF00]/50" />
+          <Shield className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#3B82F6]/50" />
         </div>
       </div>
 
@@ -69,7 +69,7 @@ export function AmfnLoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter portal password"
-            className="bg-white/[0.03] border-white/[0.06] text-white placeholder:text-gray-600 pr-10 focus:border-[#03FF00]/30 focus:ring-[#03FF00]/20"
+            className="bg-white/[0.03] border-white/[0.06] text-white placeholder:text-gray-600 pr-10 focus:border-[#3B82F6]/30 focus:ring-[#3B82F6]/20"
             disabled={loading}
             autoFocus
             required
@@ -87,7 +87,7 @@ export function AmfnLoginForm() {
       <Button
         type="submit"
         disabled={loading || !password}
-        className="w-full bg-[#03FF00] hover:bg-[#03FF00]/90 text-[#0a0e1a] font-semibold disabled:opacity-50 amfn-btn-shine"
+        className="w-full relative bg-[#EF4444] hover:bg-[#DC2626] text-white font-semibold disabled:opacity-50 amfn-btn-shine"
       >
         {loading ? (
           <>

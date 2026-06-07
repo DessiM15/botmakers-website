@@ -3,7 +3,7 @@ export function AmfnFooter() {
     <footer
       className="border-t border-transparent py-6"
       style={{
-        borderImage: "linear-gradient(90deg, transparent, rgba(3,255,0,0.1), transparent) 1",
+        borderImage: "linear-gradient(90deg, transparent, rgba(59,130,246,0.1), transparent) 1",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
