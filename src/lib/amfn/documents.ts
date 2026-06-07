@@ -13,8 +13,8 @@ export interface AmfnDocument {
 
 export const AMFN_CATEGORIES = [
   "Foundation Package",
-  "Content & Editorial",
   "Operations & Compliance",
+  "Content & Editorial",
   "Analytics & Performance",
   "Strategic Intelligence",
 ] as const;
@@ -22,6 +22,18 @@ export const AMFN_CATEGORIES = [
 export type AmfnCategory = (typeof AMFN_CATEGORIES)[number];
 
 export const AMFN_DOCUMENTS: AmfnDocument[] = [
+  // ── Foundation Package (read-first orientation → reference docs) ──
+  {
+    id: "how-to-use",
+    title: "How to Use This Package",
+    description:
+      "Detailed operator's manual. Mental model, weekly/monthly operating rhythm, post lifecycle walkthroughs, and common-scenario playbook.",
+    fileName: "06_How_To_Use_This_Package.pdf",
+    fileType: "pdf",
+    fileSize: "37 KB",
+    category: "Foundation Package",
+    canView: true,
+  },
   {
     id: "package-overview",
     title: "Package Overview",
@@ -44,17 +56,21 @@ export const AMFN_DOCUMENTS: AmfnDocument[] = [
     category: "Foundation Package",
     canView: true,
   },
+
+  // ── Operations & Compliance (process before content) ──
   {
-    id: "how-to-use",
-    title: "How to Use This Package",
+    id: "workflow-compliance",
+    title: "Workflow & Compliance",
     description:
-      "Detailed operator's manual. Mental model, weekly/monthly operating rhythm, post lifecycle walkthroughs, and common-scenario playbook.",
-    fileName: "06_How_To_Use_This_Package.pdf",
+      "GREEN/YELLOW/RED content classification, 5-stage pre-publication workflow, Reg FD guardrails, and crisis communications protocol.",
+    fileName: "04_Workflow_and_Compliance.pdf",
     fileType: "pdf",
-    fileSize: "37 KB",
-    category: "Foundation Package",
+    fileSize: "19 KB",
+    category: "Operations & Compliance",
     canView: true,
   },
+
+  // ── Content & Editorial (calendar first → then the actual content) ──
   {
     id: "editorial-calendar",
     title: "90-Day Editorial Calendar",
@@ -77,17 +93,8 @@ export const AMFN_DOCUMENTS: AmfnDocument[] = [
     category: "Content & Editorial",
     canView: false,
   },
-  {
-    id: "workflow-compliance",
-    title: "Workflow & Compliance",
-    description:
-      "GREEN/YELLOW/RED content classification, 5-stage pre-publication workflow, Reg FD guardrails, and crisis communications protocol.",
-    fileName: "04_Workflow_and_Compliance.pdf",
-    fileType: "pdf",
-    fileSize: "19 KB",
-    category: "Operations & Compliance",
-    canView: true,
-  },
+
+  // ── Analytics & Performance ──
   {
     id: "kpi-dashboards",
     title: "KPI Dashboards",
@@ -99,6 +106,8 @@ export const AMFN_DOCUMENTS: AmfnDocument[] = [
     category: "Analytics & Performance",
     canView: false,
   },
+
+  // ── Strategic Intelligence (big-picture last) ──
   {
     id: "market-intelligence",
     title: "Market Intelligence Report",

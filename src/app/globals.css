@@ -125,21 +125,21 @@
   }
 }
 
-/* ─── AMFN Portal Design Tokens ─── */
+/* ─── AMFN Portal Design Tokens (light mode) ─── */
 :root {
-  --amfn-bg: #0a0e1a;
-  --amfn-bg-card: rgba(255, 255, 255, 0.02);
-  --amfn-bg-card-hover: rgba(255, 255, 255, 0.05);
+  --amfn-bg: #F8FAFC;
+  --amfn-bg-card: rgba(0, 0, 0, 0.02);
+  --amfn-bg-card-hover: rgba(0, 0, 0, 0.04);
   --amfn-red: #EF4444;
-  --amfn-red-dim: rgba(239, 68, 68, 0.15);
-  --amfn-red-glow: rgba(239, 68, 68, 0.4);
+  --amfn-red-dim: rgba(239, 68, 68, 0.1);
+  --amfn-red-glow: rgba(239, 68, 68, 0.25);
   --amfn-blue: #3B82F6;
-  --amfn-blue-dim: rgba(59, 130, 246, 0.15);
-  --amfn-blue-glow: rgba(59, 130, 246, 0.4);
-  --amfn-border: rgba(255, 255, 255, 0.06);
-  --amfn-border-hover: rgba(255, 255, 255, 0.12);
+  --amfn-blue-dim: rgba(59, 130, 246, 0.1);
+  --amfn-blue-glow: rgba(59, 130, 246, 0.25);
+  --amfn-border: rgba(0, 0, 0, 0.08);
+  --amfn-border-hover: rgba(0, 0, 0, 0.15);
   --amfn-navy: #033457;
-  --amfn-navy-glow: rgba(3, 52, 87, 0.5);
+  --amfn-navy-glow: rgba(3, 52, 87, 0.15);
 }
 
 /* ─── AMFN Keyframe Animations ─── */
@@ -159,8 +159,8 @@
 }
 
 @keyframes amfn-glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); }
-  50%      { box-shadow: 0 0 40px rgba(239, 68, 68, 0.35); }
+  0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.1); }
+  50%      { box-shadow: 0 0 40px rgba(239, 68, 68, 0.2); }
 }
 
 @keyframes amfn-scan-line {
@@ -309,8 +309,8 @@
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: amfn-grid-scroll 8s linear infinite;
   pointer-events: none;

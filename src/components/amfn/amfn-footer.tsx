@@ -11,11 +11,11 @@ export function AmfnFooter() {
           <div className="flex items-center justify-center w-5 h-5 rounded bg-[#03FF00] text-[#0a0e1a]">
             <span className="text-[10px] font-bold">b.</span>
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-400">
             Powered by BotMakers Inc.
           </span>
         </div>
-        <span className="text-xs text-gray-600">
+        <span className="text-xs text-gray-400">
           &copy; {new Date().getFullYear()} American Fusion Inc. All rights reserved.
         </span>
       </div>

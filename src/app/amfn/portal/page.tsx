@@ -30,12 +30,12 @@ export default async function AmfnPortalPage() {
               <FileText className="h-5 w-5 text-[#3B82F6]" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-white tracking-tight">
+              <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
                 Document Portal
               </h1>
             </div>
           </div>
-          <p className="text-gray-400 ml-[52px]">
+          <p className="text-gray-500 ml-[52px]">
             Your complete deliverable package from BotMakers Inc. — foundation documents,
             editorial calendar, content, compliance workflows, KPIs, and market intelligence.
           </p>
@@ -46,14 +46,14 @@ export default async function AmfnPortalPage() {
           {QUICK_STATS.map((stat) => (
             <div
               key={stat.label}
-              className="bg-white/[0.02] border border-white/[0.06] rounded-xl px-4 py-3 flex items-center gap-3"
+              className="bg-white border border-black/[0.06] rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm"
             >
               <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#3B82F6]/10">
                 <stat.icon className="h-4 w-4 text-[#3B82F6]" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">{stat.label}</p>
-                <p className="text-sm font-semibold text-white">{stat.value}</p>
+                <p className="text-xs text-gray-400">{stat.label}</p>
+                <p className="text-sm font-semibold text-gray-900">{stat.value}</p>
               </div>
             </div>
           ))}

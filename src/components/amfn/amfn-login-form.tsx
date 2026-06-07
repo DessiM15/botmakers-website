@@ -44,7 +44,7 @@ export function AmfnLoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="username" className="text-sm text-gray-400">
+        <Label htmlFor="username" className="text-sm text-gray-500">
           Username
         </Label>
         <div className="relative">
@@ -52,14 +52,14 @@ export function AmfnLoginForm() {
             id="username"
             value="AMFN"
             readOnly
-            className="bg-white/[0.03] border-white/[0.06] text-[#3B82F6] font-mono cursor-not-allowed pl-10"
+            className="bg-gray-50 border-black/[0.08] text-[#3B82F6] font-mono cursor-not-allowed pl-10"
           />
           <Shield className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#3B82F6]/50" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password" className="text-sm text-gray-400">
+        <Label htmlFor="password" className="text-sm text-gray-500">
           Password
         </Label>
         <div className="relative">
@@ -69,17 +69,17 @@ export function AmfnLoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter portal password"
-            className="bg-white/[0.03] border-white/[0.06] text-white placeholder:text-gray-600 pr-10 focus:border-[#3B82F6]/30 focus:ring-[#3B82F6]/20"
+            className="bg-gray-50 border-black/[0.08] text-gray-900 placeholder:text-gray-400 pr-10 focus:border-[#3B82F6]/40 focus:ring-[#3B82F6]/20"
             disabled={loading}
             autoFocus
             required
           />
-          <Lock className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-600" />
+          <Lock className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
         </div>
       </div>
 
       {error && (
-        <p className="text-sm text-red-400 bg-red-400/5 border-l-2 border-red-400 rounded-r-lg px-3 py-2">
+        <p className="text-sm text-red-600 bg-red-50 border-l-2 border-red-500 rounded-r-lg px-3 py-2">
           {error}
         </p>
       )}

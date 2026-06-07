@@ -110,7 +110,7 @@ export function AmfnChatPanel() {
         <SheetContent
           side="right"
           showCloseButton={false}
-          className="w-full sm:max-w-md bg-[#0a0e1a] border-white/[0.06] p-0 flex flex-col"
+          className="w-full sm:max-w-md bg-white border-black/[0.06] p-0 flex flex-col"
         >
           {/* Header */}
           <SheetHeader className="px-4 pt-4 pb-3 border-b border-transparent" style={{
@@ -123,21 +123,21 @@ export function AmfnChatPanel() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <SheetTitle className="text-white text-base">
+                    <SheetTitle className="text-gray-900 text-base">
                       Document Assistant
                     </SheetTitle>
                     <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 uppercase tracking-wider">
                       AI
                     </span>
                   </div>
-                  <SheetDescription className="text-gray-500 text-xs">
+                  <SheetDescription className="text-gray-400 text-xs">
                     Ask questions about your deliverable package
                   </SheetDescription>
                 </div>
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-gray-500 hover:text-[#EF4444] transition-colors"
+                className="text-gray-400 hover:text-[#EF4444] transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -147,17 +147,17 @@ export function AmfnChatPanel() {
           {/* Messages */}
           <div
             ref={scrollRef}
-            className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
+            className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-gray-50/50"
           >
             {messages.length === 0 && (
               <div className="text-center py-8">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#3B82F6]/10 border border-[#3B82F6]/20 mb-4">
                   <Bot className="h-6 w-6 text-[#3B82F6]" />
                 </div>
-                <p className="text-sm text-gray-400 mb-1">
+                <p className="text-sm text-gray-500 mb-1">
                   Ask me anything about your documents
                 </p>
-                <p className="text-xs text-gray-600 mb-6">
+                <p className="text-xs text-gray-400 mb-6">
                   I can help with brand guidelines, editorial calendar, KPIs, market intelligence, and more.
                 </p>
 
@@ -167,7 +167,7 @@ export function AmfnChatPanel() {
                     <button
                       key={q}
                       onClick={() => sendMessage(q)}
-                      className="text-xs text-gray-400 bg-white/[0.03] border border-white/[0.06] rounded-full px-3 py-1.5 hover:bg-[#3B82F6]/10 hover:text-[#3B82F6] hover:border-[#3B82F6]/20 transition-colors"
+                      className="text-xs text-gray-500 bg-white border border-black/[0.06] rounded-full px-3 py-1.5 hover:bg-[#3B82F6]/5 hover:text-[#3B82F6] hover:border-[#3B82F6]/20 transition-colors shadow-sm"
                     >
                       {q}
                     </button>
@@ -185,7 +185,7 @@ export function AmfnChatPanel() {
                 <div className="w-7 h-7 rounded-lg bg-[#3B82F6]/10 border border-[#3B82F6]/20 flex items-center justify-center">
                   <Loader2 className="h-3.5 w-3.5 text-[#3B82F6] animate-spin" />
                 </div>
-                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl px-3.5 py-2.5">
+                <div className="bg-white border border-black/[0.06] rounded-xl px-3.5 py-2.5 shadow-sm">
                   <div className="flex gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#EF4444] animate-bounce" style={{ animationDelay: "0ms" }} />
                     <span className="w-1.5 h-1.5 rounded-full bg-[#EF4444] animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -199,14 +199,14 @@ export function AmfnChatPanel() {
           {/* Error */}
           {error && (
             <div className="px-4 pb-2">
-              <p className="text-xs text-red-400 bg-red-400/5 border-l-2 border-red-400 rounded-r-lg px-3 py-2">
+              <p className="text-xs text-red-600 bg-red-50 border-l-2 border-red-500 rounded-r-lg px-3 py-2">
                 {error}
               </p>
             </div>
           )}
 
           {/* Input */}
-          <div className="border-t border-transparent px-4 py-3" style={{
+          <div className="border-t border-transparent px-4 py-3 bg-white" style={{
             borderImage: "linear-gradient(90deg, transparent, rgba(59,130,246,0.1), transparent) 1",
           }}>
             <div className="flex items-end gap-2">
@@ -217,7 +217,7 @@ export function AmfnChatPanel() {
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about the documents..."
                 rows={1}
-                className="flex-1 resize-none bg-white/[0.03] border border-white/[0.06] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-[#3B82F6]/20 max-h-32"
+                className="flex-1 resize-none bg-gray-50 border border-black/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#3B82F6]/30 max-h-32"
                 disabled={loading}
               />
               <Button

@@ -3,7 +3,7 @@ import { LogOut, Zap } from "lucide-react";
 
 export function AmfnHeader() {
   return (
-    <header className="sticky top-0 z-40 bg-[#0a0e1a]/90 backdrop-blur-xl border-b border-transparent"
+    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-transparent"
       style={{
         borderImage: "linear-gradient(90deg, transparent, rgba(59,130,246,0.15), transparent) 1",
       }}
@@ -18,15 +18,15 @@ export function AmfnHeader() {
               className="object-contain"
             />
           </div>
-          <span className="text-white font-semibold text-sm tracking-tight">
+          <span className="text-gray-900 font-semibold text-sm tracking-tight">
             American Fusion Inc.
           </span>
-          <div className="hidden sm:flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06]">
+          <div className="hidden sm:flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full bg-black/[0.03] border border-black/[0.06]">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inset-0 rounded-full bg-[#3B82F6] amfn-status-pulse" />
               <span className="relative rounded-full h-1.5 w-1.5 bg-[#3B82F6]" />
             </span>
-            <span className="text-[10px] text-gray-400 uppercase tracking-wider">Live</span>
+            <span className="text-[10px] text-gray-500 uppercase tracking-wider">Live</span>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export function AmfnHeader() {
           <Zap className="h-3.5 w-3.5 text-[#3B82F6]/40" />
           <a
             href="/api/amfn/logout"
-            className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#EF4444] transition-colors"
+            className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#EF4444] transition-colors"
           >
             <LogOut className="h-4 w-4" />
             <span className="hidden sm:inline">Sign Out</span>
