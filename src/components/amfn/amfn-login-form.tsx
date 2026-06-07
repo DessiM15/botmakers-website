@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Lock, Loader2 } from "lucide-react";
+import { Lock, Loader2, Shield } from "lucide-react";
 
 export function AmfnLoginForm() {
   const router = useRouter();
@@ -44,19 +44,22 @@ export function AmfnLoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="username" className="text-sm text-gray-300">
+        <Label htmlFor="username" className="text-sm text-gray-400">
           Username
         </Label>
-        <Input
-          id="username"
-          value="AMFN"
-          readOnly
-          className="bg-white/5 border-white/10 text-gray-300 cursor-not-allowed"
-        />
+        <div className="relative">
+          <Input
+            id="username"
+            value="AMFN"
+            readOnly
+            className="bg-white/[0.03] border-white/[0.06] text-[#03FF00] font-mono cursor-not-allowed pl-10"
+          />
+          <Shield className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#03FF00]/50" />
+        </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password" className="text-sm text-gray-300">
+        <Label htmlFor="password" className="text-sm text-gray-400">
           Password
         </Label>
         <div className="relative">
@@ -66,17 +69,17 @@ export function AmfnLoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter portal password"
-            className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 pr-10"
+            className="bg-white/[0.03] border-white/[0.06] text-white placeholder:text-gray-600 pr-10 focus:border-[#03FF00]/30 focus:ring-[#03FF00]/20"
             disabled={loading}
             autoFocus
             required
           />
-          <Lock className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+          <Lock className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-600" />
         </div>
       </div>
 
       {error && (
-        <p className="text-sm text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2">
+        <p className="text-sm text-red-400 bg-red-400/5 border-l-2 border-red-400 rounded-r-lg px-3 py-2">
           {error}
         </p>
       )}
@@ -84,15 +87,18 @@ export function AmfnLoginForm() {
       <Button
         type="submit"
         disabled={loading || !password}
-        className="w-full bg-[#c53030] hover:bg-[#a32828] text-white font-medium disabled:opacity-50"
+        className="w-full bg-[#03FF00] hover:bg-[#03FF00]/90 text-[#0a0e1a] font-semibold disabled:opacity-50 amfn-btn-shine"
       >
         {loading ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Signing in...
+            Authenticating...
           </>
         ) : (
-          "Sign In"
+          <>
+            <Shield className="mr-2 h-4 w-4" />
+            Access Portal
+          </>
         )}
       </Button>
     </form>
