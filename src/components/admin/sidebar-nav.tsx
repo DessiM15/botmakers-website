@@ -14,6 +14,7 @@ import {
   Gift,
   Calendar,
   Home,
+  Newspaper,
 } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { logoutTeam } from "@/lib/actions/auth";
@@ -31,6 +32,7 @@ const navItems = [
   { href: "/admin/invoices", label: "Invoices", icon: Receipt },
   { href: "/admin/calendar", label: "Calendar", icon: Calendar },
   { href: "/admin/referrals", label: "Referrals", icon: Gift },
+  { href: "/admin/news", label: "News", icon: Newspaper },
   { href: "/admin/activity", label: "Activity", icon: Activity },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];

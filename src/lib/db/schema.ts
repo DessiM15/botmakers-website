@@ -112,6 +112,13 @@ export const notificationTypeEnum = pgEnum("notification_type", [
 ]);
 
 
+export const articleStatusEnum = pgEnum("article_status", [
+  "draft",
+  "published",
+  "archived",
+  "scheduled",
+]);
+
 export const teamRoleEnum = pgEnum("team_role", ["admin", "member"]);
 
 export const questionStatusEnum = pgEnum("question_status", [
@@ -785,3 +792,37 @@ export const bookingSettings = pgTable("booking_settings", {
     .notNull()
     .defaultNow(),
 });
+
+export const articles = pgTable(
+  "articles",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    title: text("title").notNull(),
+    slug: text("slug").notNull(),
+    excerpt: text("excerpt"),
+    content: text("content"),
+    featuredImageUrl: text("featured_image_url"),
+    status: articleStatusEnum("status").notNull().default("draft"),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    scheduledAt: timestamp("scheduled_at", { withTimezone: true }),
+    tags: jsonb("tags").$type<string[]>().default([]),
+    metaTitle: text("meta_title"),
+    metaDescription: text("meta_description"),
+    createdBy: uuid("created_by")
+      .notNull()
+      .references(() => teamUsers.id),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    uniqueIndex("articles_slug_idx").on(table.slug),
+    index("articles_status_idx").on(table.status),
+    index("articles_published_at_idx").on(table.publishedAt),
+    index("articles_created_by_idx").on(table.createdBy),
+    index("articles_created_at_idx").on(table.createdAt),
+  ]
+);

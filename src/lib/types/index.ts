@@ -50,6 +50,12 @@ export type {
   CalendarEventWithRelations,
 } from "./calendar";
 export type { ActivityLogEntry, AuditLogEntry } from "./activity";
+export type {
+  Article,
+  ArticleStatus,
+  ArticleFilters,
+  ArticleWithAuthor,
+} from "./news";
 export type { AuthErrorCode, AuthError, AuthResult } from "./auth";
 export {
   DEFAULT_PROJECT_PHASES,

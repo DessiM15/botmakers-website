@@ -232,3 +232,23 @@ export const referralFormSchema = z.object({
 });
 
 export type ReferralFormInput = z.infer<typeof referralFormSchema>;
+
+// Article schemas
+export const articleCreateSchema = z.object({
+  title: z.string().min(1, "Title is required").max(200, "Title too long"),
+  slug: z.string().optional(),
+  excerpt: z.string().max(500, "Excerpt too long").optional(),
+  content: z.string().optional(),
+  featured_image_url: z.string().url().optional().or(z.literal("")),
+  status: z.enum(["draft", "published", "archived", "scheduled"]).default("draft"),
+  scheduled_at: z.string().optional().nullable(),
+  tags: z.array(z.string()).default([]),
+  meta_title: z.string().max(70, "Meta title too long").optional(),
+  meta_description: z.string().max(160, "Meta description too long").optional(),
+});
+
+export type ArticleCreateInput = z.infer<typeof articleCreateSchema>;
+
+export const articleUpdateSchema = articleCreateSchema.partial();
+
+export type ArticleUpdateInput = z.infer<typeof articleUpdateSchema>;
